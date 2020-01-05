@@ -45,7 +45,14 @@ public class Pyramid
   // METHODS
   public void move()
   {
-    translate(random(300,350), random(300,350), random(0,200));
+    int i;
+    int j;
+    for(i = 300; i < 0; i-=i/1.2){
+      translate(i, i, i);
+       if (i < 100) {
+         i = 350; 
+       }
+    }
   }
   
   public void display()
@@ -53,7 +60,7 @@ public class Pyramid
     rotateX(PI/2);
     rotateZ(-PI/6);
     stroke(255, 0, 150);
-    noFill();
+    fill(200,0,150);
     
     beginShape();
     vertex(-vertexPosX, -vertexPosY, -vertexPosZ);

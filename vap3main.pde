@@ -17,7 +17,7 @@ Pyramid[] pyramids = new Pyramid[5];
 
 void setup()
 {
-  frameRate(10);
+  frameRate(8);
   size(600, 700, P3D);
   
   // User Selected number of pyramids
@@ -26,7 +26,7 @@ void setup()
   //int pyramidNumber = Integer.parseInt(text);
 
   // instantiate classes
-  sphere = new Sphere(100, 1, 50, 100, 50, 300, 350, 0);
+  sphere = new Sphere(100, 1, 0, 50, 150, 300, 350, 0);
   
   // Pyramidal array loop control
   for(int i = 0; i < pyramids.length; i++){
@@ -39,13 +39,12 @@ void draw()
   background(b);
   // draw sphere
   sphere.display();
-  // loop control again on the array
-  for(int i = 0; i < pyramids.length; i++){
+for(int i = 0; i < pyramids.length; i++){     // loop control again on the array
     pushMatrix();
     pyramids[i].move();
     pyramids[i].display();
     popMatrix();  
-}
+    }
 }  
 
 //EOF
